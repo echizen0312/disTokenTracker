@@ -3,7 +3,7 @@
         <div class="row" style="padding-bottom: 12px; margin: 0;" @keyup.enter="GoSearch">
             <div class="col-sm-6">
                 <div style="font-weight: bold; font-size: 30px; cursor: pointer; text-align: left;" @click="GoHome">
-                    disTokenTracker
+                    {{ title }}
                 </div>
             </div>
             <div class="col-sm-6">
@@ -31,6 +31,7 @@
         name: 'App',
         data() {
             return {
+                title: title,
                 host: host,
                 keyword: ''
             }
