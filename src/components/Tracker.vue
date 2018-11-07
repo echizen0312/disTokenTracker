@@ -118,7 +118,7 @@
         },
         methods: {
             GetMoment: function (date) {
-                return moment(date).format('YYYY-MM-DD HH:mm:ss')
+                return moment(date).utcOffset(480).format('YYYY-MM-DD HH:mm:ss')
             },
             GetInfo: function () {
                 let self = this
