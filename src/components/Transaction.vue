@@ -66,6 +66,9 @@
                                             transaction.data.to
                                             }}</a>
                                         <span style="padding-left: 20px; padding-right: 20px;">{{ transaction.data.quantity }}</span>
+                                        <br><br>
+                                        <span style="padding-left: 0; padding-right: 0;">备注：</span>
+                                        <span style="padding-left: 20px; padding-right: 20px;">{{ transaction.data.memo }}</span>
                                     </div>
                                     <span v-else>{{ transaction.data }}</span>
                                 </div>
