@@ -137,7 +137,7 @@
                                     </div>
                                     {{ action.data.quantity }}
                                 </div>
-                                <div class="col-md-4 text" style="text-align: left;">
+                                <div class="col-md-4" style="text-align: left; word-break: break-all;">
                                     <div class="visible-xs-inline visible-sm-inline" style="font-weight: bold;">memo:
                                     </div>
                                     {{ action.data.memo }}
