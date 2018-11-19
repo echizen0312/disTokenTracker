@@ -33,7 +33,7 @@
         <div class="row" style="margin: 8px 0px 0 0px;">
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="text-align: center;">最新区块</div>
+                    <div class="panel-heading" style="text-align: center; cursor: pointer;" @click="isAuto = !isAuto">最新区块</div>
                     <div class="panel-body" style="text-align: center; padding: 12px;">
                         <table class="table table-striped" style="width: 100%; table-layout: fixed; margin-bottom: 0;">
                             <thead>
@@ -62,7 +62,9 @@
             </div>
             <div class="col-md-6">
                 <div class="panel panel-default">
-                    <div class="panel-heading" style="text-align: center;">最新交易{{ newTransactions.length == 0 ? ' - 查询中' : '' }}</div>
+                    <div class="panel-heading" style="text-align: center;">最新交易{{ newTransactions.length == 0 ? ' - 查询中'
+                        : '' }}
+                    </div>
                     <div class="panel-body" style="text-align: center; padding: 12px;">
                         <table class="table table-striped" style="width: 100%; table-layout: fixed; margin-bottom: 0;">
                             <thead v-if="newTransactions.length > 0">
@@ -110,11 +112,17 @@
                     tra: 0
                 },
                 newBlocks: [],
-                newTransactions: []
+                newTransactions: [],
+                isAuto: false
             }
         },
         created: function () {
-            this.GetInfo()
+            let self = this
+            setInterval(() => {
+                if (self.isAuto) {
+                    self.GetInfo()
+                }
+            }, 1000)
         },
         methods: {
             GetMoment: function (date) {
